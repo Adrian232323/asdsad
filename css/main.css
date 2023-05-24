@@ -1,0 +1,1143 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.6rem;
+}
+
+/* ___________________________________________________________________ */
+span {
+  color: #a53c3c;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.underline {
+  margin: 15px auto;
+  width: 120px;
+  height: 4px;
+  background-color: #a53c3c;
+}
+
+.white-blockk {
+  position: absolute;
+  height: 40px;
+  width: 45%;
+  background-color: rgb(17, 16, 16);
+}
+
+.white-block {
+  position: absolute;
+  height: 40px;
+  width: 45%;
+  background-color: rgb(22, 22, 22);
+}
+
+.white-block-left {
+  bottom: 0;
+  left: -50px;
+  transform: skew(45deg);
+}
+
+.white-block-right {
+  top: 0;
+  right: -50px;
+  transform: skew(45deg);
+}
+
+.section {
+  padding: 50px 15px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+  font-size: 36px;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.section-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding-top: 20px;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+/* _____________________________________________________ */
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 1000;
+}
+.burger-btn .burger-btn:focus {
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.burger-btn .burger-btn-box {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  padding: 10px;
+}
+.burger-btn .burger-btn-box .burger-btn-bars, .burger-btn .burger-btn-box .burger-btn-bars::after, .burger-btn .burger-btn-box .burger-btn-bars::before {
+  position: absolute;
+  right: 0;
+  height: 4px;
+  content: "";
+  background-color: #a53c3c;
+  transition: width 0.3s;
+}
+.burger-btn .burger-btn-box .burger-btn-bars {
+  width: 100%;
+}
+.burger-btn .burger-btn-box .burger-btn-bars::after {
+  top: 13px;
+  width: 35%;
+}
+.burger-btn .burger-btn-box .burger-btn-bars::before {
+  top: 27px;
+  width: 70%;
+  transition-delay: 0.1s;
+}
+
+.burger-btn:hover .burger-btn-bars::after, .burger-btn:hover .burger-btn-bars::before {
+  width: 100%;
+}
+
+.about-us {
+  display: none;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(17, 16, 16);
+  transition: 0.5s;
+  z-index: 100;
+}
+.nav .nav-item {
+  position: relative;
+  display: block;
+  margin: 1em 0;
+  padding: 1em;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fff;
+}
+.nav .nav-item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 80%;
+  transform: scaleY(0);
+  background-color: #a53c3c;
+  transition: transform 0.3s;
+  content: "";
+}
+.nav .nav-item:hover::before {
+  transform: scaleY(1);
+}
+
+.nav-active {
+  transform: translateX(0);
+}
+
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.nav-items-animation {
+  animation: navItemsAnimation 1s both;
+}
+
+/* ___________ HEADER ___________ */
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url(../img/car-wash-g07e55dab0_640.jpg);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  z-index: 0;
+}
+.header .header-shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -5;
+}
+.header .header-text {
+  color: #fff;
+  padding: 20px;
+  z-index: 15;
+}
+.header .header-text .header-title {
+  font-size: 52px;
+  letter-spacing: 3px;
+  padding-bottom: 30px;
+}
+.header .header-text .header-info {
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+.header .header-text .fa-solid {
+  color: #a53c3c;
+  padding-right: 15px;
+  font-size: 24px;
+}
+.header .header-btn {
+  margin: 30px;
+  padding: 15px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 8px;
+  background-color: #a53c3c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.header .header-btn:hover {
+  border: 2px solid #fff;
+}
+.header .header-icon {
+  position: absolute;
+  font-size: 30px;
+  bottom: 50px;
+  padding: 15px;
+  left: 50%;
+  transform: translate(-50%);
+  color: #a53c3c;
+}
+
+.aboutus {
+  background-color: rgb(22, 22, 22);
+  position: relative;
+  overflow: hidden;
+}
+.aboutus .aboutus-box {
+  padding: 15px;
+}
+.aboutus .aboutus-box .abouts-info {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #a53c3c;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+.aboutus .aboutus-box .aboutus-list li {
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+  padding: 10px;
+}
+.aboutus .aboutus-box .aboutus-list .fa-solid {
+  padding-right: 10px;
+  color: #a53c3c;
+  font-size: 20px;
+}
+.aboutus .aboutus-box .aboutus-text {
+  color: #fff;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.offers {
+  position: relative;
+  background-color: rgb(17, 16, 16);
+}
+.offers .offer-boxs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.offers .offer-box {
+  position: relative;
+  transition: transform 3s;
+  width: 30%;
+  margin: 50px 0;
+}
+.offers .offer-box img {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.offers .offer-box .offer-box-title {
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #a53c3c;
+  font-size: 24px;
+  letter-spacing: 2px;
+  height: 60px;
+}
+.offers .offer-box .offer-box-text {
+  display: flex;
+  color: #fff;
+  height: 230px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+}
+.offers .offer-box .offer-box-text-info {
+  display: flex;
+  color: #a53c3c;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+}
+.offers .offer-box .offer-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #a53c3c;
+  margin: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.offers .offer-box .offer-btn .fa-solid {
+  padding: 10px;
+}
+.offers .offer-btn:hover {
+  color: #a53c3c;
+  border: 2px solid #fff;
+}
+
+.drive {
+  position: relative;
+  overflow: hidden;
+  background-color: #e7e6e6;
+}
+.drive .section-title {
+  color: rgb(22, 22, 22);
+}
+.drive .section-title .fa-solid {
+  padding-left: 10px;
+}
+.drive .section-text {
+  color: rgb(22, 22, 22);
+}
+.drive .drive-box {
+  padding: 50px 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+}
+.drive .drive-box .drive-btn {
+  margin: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #a53c3c;
+  text-decoration: none;
+  color: rgb(22, 22, 22);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.drive .drive-box .drive-btn .fa-solid {
+  padding-right: 8px;
+}
+.drive .drive-box .drive-btn:hover {
+  border: 2px solid black;
+  color: #a53c3c;
+  background-color: #fff;
+}
+
+.special {
+  position: relative;
+  background-color: rgb(22, 22, 22);
+  padding: 50px 15px;
+}
+.special .special-boxs {
+  padding-top: 60px;
+}
+.special .special-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  padding: 15px;
+}
+.special .special-box img {
+  width: 500px;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+}
+.special .special-box .special-box-title {
+  font-size: 22px;
+  padding: 30px 15px;
+  color: #a53c3c;
+}
+.special .special-box .special-box-text {
+  font-size: 16px;
+  padding: 15px;
+  color: #d4d2d2;
+  line-height: 25px;
+}
+.special .special-box-wosk {
+  padding: 40px 15px;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+}
+
+.offer-bg .offer-img {
+  position: relative;
+  height: 80vh;
+  background-image: url(../img/car-wallpapers-gaa6418745_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: 5;
+  overflow: hidden;
+}
+.offer-bg .offer-shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -10;
+}
+.offer-bg .offer-bg-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 15px;
+  letter-spacing: 2px;
+  z-index: 0;
+}
+.offer-bg .offer-bg-text .offer-bg-text-title {
+  font-size: 38px;
+  padding-bottom: 40px;
+}
+.offer-bg .experience-btn {
+  text-decoration: none;
+  color: #fff;
+  padding: 15px;
+  border: 2px solid #fff;
+  background-color: #a53c3c;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.offer-bg .experience-btn:hover {
+  border: 2px solid #a53c3c;
+  background-color: #fff;
+  color: #a53c3c;
+}
+
+.experience {
+  background-color: rgb(22, 22, 22);
+}
+.experience .experience-boxs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  padding: 50px 20px;
+}
+.experience .experience-boxs .experience-box {
+  margin-top: 50px;
+  width: 45%;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.experience .experience-boxs .experience-box .experience-img {
+  position: relative;
+}
+.experience .experience-boxs .experience-box .experience-img img {
+  width: 100%;
+  height: 400px;
+}
+.experience .experience-boxs .experience-box .experience-img .img-shadow .img-shadow-text {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  height: 50px;
+  width: 80px;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  background-color: #a53c3c;
+}
+.experience .experience-boxs .experience-box .experience-img .img-shadow .img-shadow-text-II {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  color: #fff;
+  height: 50px;
+  width: 80px;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  background-color: #a53c3c;
+}
+.experience .experience-boxs .experience-box:hover {
+  transform: scale(0.95);
+}
+.experience .experience-boxs .experience-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #fff;
+  color: #333;
+  min-height: 250px;
+}
+.experience .experience-boxs .experience-text .experience-text-title {
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.experience .experience-boxs .experience-text .experience-text-info .fa-solid {
+  color: #a53c3c;
+  padding-right: 8px;
+  font-size: 24px;
+}
+.experience .experience-boxs .experience-text .experience-text-btn {
+  text-decoration: none;
+  border: 2px solid #fff;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #a53c3c;
+  color: #fff;
+  cursor: pointer;
+}
+.experience .experience-boxs .experience-text .experience-text-btn .fa-brands {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.instagram .instagram-img {
+  position: relative;
+  background-image: url(../img/car-g8c188032c_1280.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+.instagram .instagram-shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -10;
+}
+.instagram .instagram-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  height: 100%;
+  color: #fff;
+  padding: 15px;
+  z-index: -5;
+}
+.instagram .instagram-text .instagram-title {
+  font-size: 32px;
+  padding: 40px 15px;
+}
+.instagram .instagram-text .instagram-paragraf {
+  font-size: 24px;
+  color: #a53c3c;
+}
+.instagram .instagram-text ul {
+  color: #fff;
+  font-size: 24px;
+}
+.instagram .instagram-text ul .instagram-list-item {
+  color: #fff;
+  padding: 8px;
+  list-style: none;
+}
+.instagram .instagram-text ul .instagram-list-item .fa-solid {
+  padding: 10px;
+  font-size: 24px;
+  color: #a53c3c;
+}
+.instagram .instagram-text .instagram-btn {
+  text-decoration: none;
+  padding: 15px;
+  border: 2px solid #a53c3c;
+  background-color: #a53c3c;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.instagram .instagram-text .instagram-btn:hover {
+  border: 2px solid #fff;
+}
+
+.opinion {
+  background-color: rgb(22, 22, 22);
+  padding: 50px 15px;
+}
+.opinion .opinion-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  padding: 50px 15px;
+}
+.opinion .opinion-box img {
+  height: 200px;
+  width: 45%;
+  margin: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.opinion .opinion-box img:hover {
+  border: 4px solid #a53c3c;
+  transform: scale(1.1);
+}
+.opinion .opinion-box:nth-child(even) {
+  margin-top: 20px;
+}
+.opinion .opinion-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  font-size: 16px;
+  padding: 15px;
+  color: #fff;
+}
+.opinion .opinion-link .opinion-fb-link {
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
+.opinion .opinion-link .opinion-fb-link .fa-brands {
+  color: #fff;
+  font-size: 30px;
+  padding: 8px;
+}
+.opinion .opinion-link .opinion-fb-link:hover {
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+
+.contact {
+  background-color: rgb(17, 16, 16);
+  position: relative;
+  overflow: hidden;
+}
+.contact .contact-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 50px 15px;
+}
+.contact .contact-box .contact-box-title {
+  font-size: 24px;
+  padding: 15px;
+}
+.contact .contact-box .contact-link {
+  text-decoration: none;
+  color: #fff;
+  padding: 15px;
+  margin: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact .contact-box .contact-link .contact-icon {
+  padding-right: 10px;
+  font-size: 26px;
+  color: #a53c3c;
+}
+.contact .contact-box .contact-link .fa-right-long {
+  padding-left: 110px;
+  color: #333;
+}
+.contact .contact-box .contact-link:hover {
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+.contact .contact-box .contact-link:hover .fa-right-long {
+  color: #fff;
+}
+.contact .contact-map-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
+  padding: 10px;
+}
+.contact .contact-map {
+  padding: 50px 15px;
+}
+
+.summarison {
+  padding: 15px;
+  background-color: rgb(22, 22, 22);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.summarison .summarison-boxs {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.summarison .summarison-boxs .summarison-box {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 30%;
+  margin: 10px;
+}
+.summarison .summarison-boxs .summarison-box .summarison-box-text {
+  color: #a53c3c;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 15px;
+}
+.summarison .summarison-boxs .summarison-box .summarison-icons-box .summarison-icons {
+  font-size: 30px;
+  padding: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+.summarison .summarison-boxs .summarison-box .summarison-icons-box .summarison-icons:hover {
+  color: #a53c3c;
+}
+.summarison .summarison-boxs .summarison-box .summarison-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.summarison .summarison-boxs .summarison-box .summarison-links .summarison-link {
+  padding: 5px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.summarison .summarison-boxs .summarison-box .summarison-links .summarison-link:hover {
+  color: #a53c3c;
+}
+
+footer {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  padding: 20px;
+}
+
+.body-second {
+  height: 100vh;
+}
+
+.offer-first-item {
+  position: relative;
+  overflow: hidden;
+}
+.offer-first-item .offer-first-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-image: url(../img/car-wash-gf5a494180_1280.jpg);
+  height: 60vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 0;
+}
+.offer-first-item .offer-first-shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -5;
+}
+.offer-first-item .offer-first-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.offer-first-item .offer-first-box .offer-first-text {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 15px;
+  letter-spacing: 2px;
+  font-size: 42px;
+  z-index: 0;
+  overflow: hidden;
+  border-left: 3px solid #a53c3c;
+  border-top: 3px solid #a53c3c;
+  border-radius: 8px;
+}
+.offer-first-item .offer-first-box .offer-items-info {
+  color: #fff;
+  font-size: 22px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #e7e6e6;
+  color: black;
+  border: 2px solid #a53c3c;
+}
+.offer-first-item .offer-first-box .offer-items-price {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 22px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #e7e6e6;
+  color: black;
+  border: 2px solid #a53c3c;
+}
+
+.offer-first-items {
+  background-color: rgb(22, 22, 22);
+  padding-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+.offer-first-items .offer-items-info {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  padding: 15px;
+}
+.offer-first-items .offer-items-text {
+  color: #a53c3c;
+  font-size: 24px;
+  padding-bottom: 30px;
+  padding: 15px;
+}
+.offer-first-items .offer-items-list {
+  list-style: none;
+  padding: 10px;
+  color: #fff;
+  font-size: 20px;
+}
+.offer-first-items .offer-items-list .fa-solid {
+  color: #a53c3c;
+  font-size: 28px;
+  padding-right: 8px;
+}
+.offer-first-items .offer-first-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  padding: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #a53c3c;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.offer-first-items .offer-first-btn:hover {
+  transform: scale(1.08);
+  border: 2px solid #fff;
+}
+
+/* ______________ MEDIA ___________________ */
+@media (max-width: 376px) {
+  .section-title {
+    font-size: 26px;
+  }
+  .section-text {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .header .header-text .header-title {
+    font-size: 28px;
+  }
+  .header .header-text .header-info {
+    font-size: 16px;
+  }
+  .header .header-text .fa-solid {
+    padding-right: 5px;
+    font-size: 22px;
+  }
+  .header .header-btn {
+    margin-top: 10px;
+  }
+  .special .special-box img {
+    width: 150px;
+    height: 150px;
+  }
+  .special .special-box-wosk {
+    font-size: 16px;
+  }
+  .experience .experience-boxs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  .experience .experience-boxs .experience-box {
+    width: 100%;
+  }
+  .experience .experience-boxs .experience-box .experience-img img {
+    width: 100%;
+    height: 200px;
+  }
+  .summarison .summarison-boxs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .summarison .summarison-boxs .summarison-box {
+    width: 100%;
+  }
+  .contact .contact-box .contact-link {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .contact .contact-box .contact-link .fa-right-long {
+    padding-left: 10px;
+    color: #333;
+  }
+  .offer-first-item .offer-first-img {
+    height: 70vh;
+  }
+  .offer-first-item .offer-first-box .offer-first-text {
+    font-size: 26px;
+    border: none;
+    padding-top: 100px;
+  }
+  .offer-first-item .offer-first-box .offer-items-info {
+    font-size: 16px;
+    padding: 10px;
+  }
+  .offer-first-item .offer-first-box .offer-items-price {
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 10px;
+  }
+  .offer-first-items {
+    position: relative;
+    height: 140vh;
+  }
+  .offer-first-items .offer-items-text {
+    font-size: 18px;
+  }
+  .offer-first-items .offer-items-list {
+    font-size: 16px;
+  }
+  .offer-first-items .offer-items-list .fa-solid {
+    font-size: 22px;
+  }
+  .offer-first-items .offer-items-info {
+    font-size: 15px;
+    padding: 15px;
+  }
+  .offer-first-items .offer-items-price {
+    font-size: 18px;
+    padding: 15px;
+  }
+  .instagram .instagram-text .instagram-title {
+    font-size: 24px;
+  }
+  .instagram .instagram-text .instagram-paragraf {
+    font-size: 18px;
+  }
+  .instagram .instagram-text .instagram-list-item {
+    font-size: 16px;
+    padding: 5px;
+  }
+  .instagram .instagram-text .fa-solid {
+    padding: 5px;
+  }
+  .instagram .instagram-btn {
+    margin-top: 20px;
+  }
+  .offer-bg .offer-bg-text .offer-bg-text-title {
+    font-size: 24px;
+  }
+  .offer-bg .experience-btn {
+    padding: 10px;
+  }
+  .offer-bg .offer-img {
+    position: relative;
+    height: 80vh;
+    background-image: url(../img/automobile-gc4a07cd37_640.jpg);
+  }
+  .instagram .instagram-img {
+    position: relative;
+    background-image: url(../img/car-gb4831e5c0_640.jpg);
+  }
+  .offer-first-item .offer-first-img {
+    background-image: url(../img/car-wash-g07e55dab0_640.jpg);
+  }
+}
+@media (max-width: 768px) {
+  .offers .offer-boxs .offer-box {
+    width: 100%;
+  }
+  .special .special-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .special .special-box img {
+    width: 200px;
+    height: 200px;
+  }
+  .opinion .opinion-box img {
+    height: 150px;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .nav {
+    height: 75vh;
+    width: 35%;
+    border-bottom-left-radius: 90%;
+  }
+  .header .header-img {
+    background-image: url(../img/car-wash-gf5a494180_1280.jpg);
+  }
+  .header .header-title {
+    font-size: 6.6rem;
+  }
+  .header .header-text {
+    font-size: 2.2rem;
+  }
+  .nav-active-ground {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .about-us {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 29px;
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 2px;
+    z-index: 1000;
+    padding: 15px;
+  }
+  .about-us .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #fff;
+    font-size: 32px;
+    transition: 0.3s;
+  }
+  .about-us .icons a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .about-us .icons .fa-brands {
+    padding: 15px;
+    cursor: pointer;
+  }
+  .about-us .icons .fa-phone {
+    color: #fff;
+    padding: 15px;
+  }
+  .about-us .icons .fa-brands:hover {
+    border: solid 1px #a53c3c;
+    border-radius: 8px;
+  }
+  .about-us .icons .fa-phone:hover {
+    border: solid 1px #a53c3c;
+    border-radius: 8px;
+  }
+}/*# sourceMappingURL=main.css.map */
